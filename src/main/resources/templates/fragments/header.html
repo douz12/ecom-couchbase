@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title th:text=""></title>
+</head>
+<body>
+    <div  th:fragment="header">
+        <ul th:each="category : ${categories}">
+           <li>
+               <a th:href="@{'/category/' + ${category.id} + '/' + ${category.cat}}" th:text="${category.cat}"></a>
+               <ul th:each="subCategory : ${category.sub}">
+                   <li>
+                       <a th:href="@{'/category/' + ${subCategory.id} + '/' + ${subCategory.cat}}" th:text="${subCategory.cat}"></a>
+                   </li>
+               </ul>
+           </li>
+        </ul>
+    </div>
+</body>
+</html>
