@@ -11,15 +11,15 @@ import java.util.List;
 public class Category {
     @Id private String id;
     @Field("cat") private String value;
-    @Field("sub") private List<Category> subCategories = Lists.newArrayList();
+    @Field("sub") private List<Integer> subCategories = Lists.newArrayList();
 
-    public void addSubCategory(Category category) {subCategories.add(category);}
+    public void addSubCategory(Integer categoryId) {subCategories.add(categoryId);}
 
-    public List<Category> getSubCategories() {
+    public List<Integer> getSubCategories() {
         return subCategories;
     }
 
-    public void setSubCategories(List<Category> subCategories) {
+    public void setSubCategories(List<Integer> subCategories) {
         this.subCategories = subCategories;
     }
 

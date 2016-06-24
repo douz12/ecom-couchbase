@@ -5,7 +5,7 @@
 </head>
 <body>
     <div  th:fragment="header">
-        <ul th:each="category : ${categories}">
+        <ul th:each="category : ${allCategories}">
            <li>
                <a th:href="@{'/category/' + ${category.id} + '/' + ${category.cat}}" th:text="${category.cat}"></a>
                <ul th:each="subCategory : ${category.sub}">
